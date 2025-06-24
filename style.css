@@ -1,0 +1,46 @@
+body {
+    font-family: sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #1e1e1e;
+    color: #d4d4d4;
+}
+
+.container {
+    display: flex;
+    width: 90%;
+    height: 90%;
+    border: 1px solid #333;
+    box-shadow: 0 0 20px rgba(0,0,0,0.5);
+    background-color: #252526;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.editor-container, .output-container {
+    width: 50%;
+    height: 100%;
+    overflow: auto;
+    position: relative;
+}
+
+.editor-container {
+    border-right: 1px solid #333;
+}
+
+#editor {
+    height: 100%;
+}
+
+#output {
+    height: 100%;
+    background-color: #1e1e1e;
+    padding: 10px;
+    box-sizing: border-box;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    color: #d4d4d4;
+}
