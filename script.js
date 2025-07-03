@@ -9,6 +9,25 @@ document.addEventListener('DOMContentLoaded', () => {
         enableLiveAutocompletion: true
     });
 
+    const savedCode = localStorage.getItem('javascript-console-code');
+    if (savedCode) {
+        editor.setValue(savedCode, 1);
+    }
+
+    const statusIndicator = document.getElementById('status-indicator');
+    let saveTimeout;
+
+    editor.on('change', () => {
+        localStorage.setItem('javascript-console-code', editor.getValue());
+        statusIndicator.textContent = 'Code saved.';
+        statusIndicator.classList.add('visible');
+
+        clearTimeout(saveTimeout);
+        saveTimeout = setTimeout(() => {
+            statusIndicator.classList.remove('visible');
+        }, 2000);
+    });
+
     const output = document.getElementById('output');
     const originalLog = console.log;
 

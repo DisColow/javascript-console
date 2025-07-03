@@ -9,6 +9,24 @@ body {
     color: #d4d4d4;
 }
 
+#status-indicator {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    z-index: 1000;
+}
+
+#status-indicator.visible {
+    opacity: 1;
+}
+
 .container {
     display: flex;
     width: 90%;
