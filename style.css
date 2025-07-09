@@ -43,14 +43,43 @@ body {
     height: 100%;
     overflow: auto;
     position: relative;
+    display: flex;
+    flex-direction: column;
 }
 
 .editor-container {
     border-right: 1px solid #333;
 }
 
+.editor-controls {
+    background-color: #333;
+    padding: 5px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+#format-button, #wrap-button, #bookmarklet-button, #save-button {
+    background-color: #5a5a5a;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 12px;
+    margin-left: 5px;
+}
+
+#format-button:hover, #wrap-button:hover, #bookmarklet-button:hover, #save-button:hover {
+    background-color: #7a7a7a;
+}
+
+#wrap-button.active {
+    background-color: #007acc;
+}
+
 #editor {
     height: 100%;
+    flex-grow: 1;
 }
 
 #output {
